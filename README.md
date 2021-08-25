@@ -27,6 +27,8 @@ POST /signup
 
 POST /signin
 
+DELETE /delete/:id
+
 GET /users
 
 GET /api/v1/tourism
