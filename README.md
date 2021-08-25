@@ -19,18 +19,12 @@
 ---
 
 #### Environment 
- > PORT: 3000
-NODE_ENV= postgres://localhost:5432/tourism.
-DATABASE_URL= postgres://dzxzjicm:tNuL9r0S3I1vKsKPeb0WE6eW7Mj6sbNY@chunee.db.elephantsql.com/dzxzjicm.
+* PORT: 3000
+* NODE_ENV= postgres://localhost:5432/tourism.
+* DATABASE_URL= postgres://dzxzjicm:tNuL9r0S3I1vKsKPeb0WE6eW7Mj6sbNY@chunee.db.elephantsql.com/dzxzjicm.
 
 ---
 
-{
-        "username": "Dena",
-        "password":"123",
-        "role": "admin"
-        
-} 
 
 
 ###### Running the app:
