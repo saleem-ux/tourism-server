@@ -6,17 +6,17 @@ const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET || 'secretstring';
 
 const userSchema = (sequelize, DataTypes) => {
-  const model = sequelize.define('User', {
+  const model = sequelize.define('User2', {
     username: { type: DataTypes.STRING, required: true, unique: true },
     password: { type: DataTypes.STRING, requires: true },
     role: {type: DataTypes.ENUM('user', 'writer', 'editor', 'admin'), requires: true, defaultValue:'user'},
     token: {
       type: DataTypes.VIRTUAL,
       get() {
-        return jwt.sign({ username: this.username }, process.env.SECRET);
+        return jwt.sign({ username: this.username },SECRET);
       },
       set(tokenObj) {
-        let token = jwt.sign(tokenObj, process.env.SECRET);
+        let token = jwt.sign(tokenObj,SECRET);
         return token;
       },
     },
@@ -50,7 +50,7 @@ const userSchema = (sequelize, DataTypes) => {
   // Bearer AUTH: Validating a token
   model.authenticateToken = async function (token) {
     try {
-      const parsedToken = jwt.verify(token, process.env.SECRET);
+      const parsedToken = jwt.verify(token, SECRET);
       const user = await this.findOne({ where: { username: parsedToken.username } });
       if (user) { return user; }
       throw new Error('User Not Found');

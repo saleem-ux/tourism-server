@@ -3,7 +3,7 @@
 const express = require('express');
 const authRouter = express.Router();
 
-const { users } = require('../models/index.js');
+const { users, tourism } = require('../models/index.js');
 const basicAuth = require('../middleware/basic.js');
 const bearerAuth = require('../middleware/bearer.js');
 const permissions = require('../middleware/acl');
@@ -30,15 +30,21 @@ authRouter.post('/signin', basicAuth, (req, res, next) => {
   res.status(200).json(user);
 });
 
-authRouter.get('/users', bearerAuth, permissions('read'),  async (req, res, next) => {
+authRouter.get('/users', bearerAuth, permissions('delete'), async (req, res, next) => {
   const user = await users.findAll({});
   const list = user.map(user => user.username);
   res.status(200).json(list);
 });
 
-authRouter.get('/secret', bearerAuth, async (req, res, next) => {
+authRouter.get('/secret', bearerAuth, permissions('delete'), async (req, res, next) => {
   res.status(200).send('Welcome to the secret area!');
 });
 
+// authRouter.post('/add', bearerAuth, async (req, res, next) => {
+
+//   let tour=tourism.create(req.body);
+//   res.status(201).json(tour);
+
+// });
 
 module.exports = authRouter;
