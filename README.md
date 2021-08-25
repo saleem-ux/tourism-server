@@ -2,7 +2,7 @@
 
 
 **Links**
-- [heroku](https://e-magazineproject.herokuapp.com/)
+- [heroku](https://tourismdb.herokuapp.com/api/v1/tourism)
 
 **Team member**
 
