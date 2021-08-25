@@ -27,8 +27,24 @@ authRouter.post('/signin', basicAuth, (req, res, next) => {
     user: req.user,
     token: req.user.token,
   };
+  console.log('sdsdsdsdsds',id)
+
   res.status(200).json(user);
 });
+
+
+
+authRouter.delete(
+  "/delete/:id",
+  bearerAuth,
+  permissions("delete"),
+  async (req, res) => {
+    const id = parseInt(req.params.id);
+    let record = await users.destroy({ where: { id } });
+    res.status(200).json(record);
+  }
+);
+
 
 authRouter.get('/users', bearerAuth, permissions('delete'), async (req, res, next) => {
   const user = await users.findAll({});
@@ -40,11 +56,11 @@ authRouter.get('/secret', bearerAuth, permissions('delete'), async (req, res, ne
   res.status(200).send('Welcome to the secret area!');
 });
 
-// authRouter.post('/add', bearerAuth, async (req, res, next) => {
+authRouter.post('/add', bearerAuth, async (req, res, next) => {
 
-//   let tour=tourism.create(req.body);
-//   res.status(201).json(tour);
+  let tour=tourism.create(req.body);
+  res.status(201).json(tour);
 
-// });
+});
 
 module.exports = authRouter;

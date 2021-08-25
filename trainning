@@ -5,6 +5,14 @@
     "role":"user"
 }
 
+
+
+
+
+dena tokens: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlbmEiLCJpYXQiOjE2Mjk5MDA0NTV9.I_eCy9I3kHQtewD4_2Xnjf-yawUMKc8HPf0TyiBWIPc
+
+
+
 3- to signin with http://localhost:3000/signin   
 4- with basic auth and username, password
 5-to see all users we use http://localhost:3000/users with the tokens in GET method
