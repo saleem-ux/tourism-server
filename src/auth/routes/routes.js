@@ -27,7 +27,6 @@ authRouter.post('/signin', basicAuth, (req, res, next) => {
     user: req.user,
     token: req.user.token,
   };
-  console.log('sdsdsdsdsds',id)
 
   res.status(200).json(user);
 });

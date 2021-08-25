@@ -6,7 +6,7 @@ const userSchema = require('./users.js');
 const tourismModel = require('./tourism/model');
 const Collection = require('./tourism/collection')
 
-const DATABASE_URL = process.env.NODE_ENV === 'test' ? 'sqlite:memory:' : process.env.DATABASE_URL;
+const DATABASE_URL = process.env.DATABASE_URL;
 
 const DATABASE_CONFIG = process.env.NODE_ENV === 'production' ? {
   dialectOptions: {

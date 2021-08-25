@@ -25,6 +25,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
+app.get('/', (req,res)=>{
+  res.status(200).send('Hello World');
+});
+
+app.get('/bad', (req, res, next)=>{
+  next('error bad end point');
+});
+
 app.use(authRoutes);
 app.use('/api/v1', v1Routes);
 
