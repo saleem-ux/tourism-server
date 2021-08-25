@@ -15,16 +15,18 @@ router.param('model', (req, res, next) => {
   }
 });
 
+// http://localhost:3000/api/v1/tourism
 router.get('/:model', handleGetAll);
-router.get('/:model/:id', handleGetOne);
 router.post('/:model', handleCreate);
+//http://localhost:3000/api/v1/tourism/1
+router.get('/:model/:id', handleGetOne);
 router.put('/:model/:id', handleUpdate);
 router.delete('/:model/:id', handleDelete);
 
 async function handleGetAll(req, res) {
   let allRecords = await req.model.get();
   res.status(200).json(allRecords);
-}
+}   
 
 async function handleGetOne(req, res) {
   const id = req.params.id;

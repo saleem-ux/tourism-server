@@ -1,0 +1,10 @@
+1- we need to signup with "http://localhost:3000/signup"  with req.body 
+2- in req.body {
+    "username":"laitdh15x2",
+    "password":"123",
+    "role":"user"
+}
+
+3- to signin with http://localhost:3000/signin   
+4- with basic auth and username, password
+5-to see all users we use http://localhost:3000/users with the tokens in GET method
