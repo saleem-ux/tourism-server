@@ -2,7 +2,6 @@
 
 ### Deployment Test
 
-###### Author: Ibrahem Alomari
 
 * ##### [Github](https://github.com/saleem-ux/tourism-server)
 * ##### [Pull Request](https://github.com/saleem-ux/tourism-server/pull/3)
