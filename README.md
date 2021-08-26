@@ -1,6 +1,6 @@
 # Tourism-server
 
-### Deployment Test
+### Deployment
 
 
 * ##### [Github](https://github.com/saleem-ux/tourism-server)
