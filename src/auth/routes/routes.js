@@ -33,15 +33,11 @@ authRouter.post('/signin', basicAuth, (req, res, next) => {
 
 
 
-authRouter.delete(
-  "/delete/:id",
-  bearerAuth,
-  permissions("delete"),
-  async (req, res) => {
-    const id = parseInt(req.params.id);
-    let record = await users.destroy({ where: { id } });
-    res.status(200).json(record);
-  }
+authRouter.delete("/delete/:id", bearerAuth, permissions("delete"), async (req, res) => {
+  const id = parseInt(req.params.id);
+  let record = await users.destroy({ where: { id } });
+  res.status(200).json(record);
+}
 );
 
 
@@ -57,7 +53,7 @@ authRouter.get('/secret', bearerAuth, permissions('delete'), async (req, res, ne
 
 authRouter.post('/add', bearerAuth, async (req, res, next) => {
 
-  let tour=tourism.create(req.body);
+  let tour = tourism.create(req.body);
   res.status(201).json(tour);
 
 });

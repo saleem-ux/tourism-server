@@ -1,6 +1,6 @@
 'use strict';
 
-const base64 = require('base-64');
+const base64 = require('base-64');  //encode and decode pass and username
 const { users } = require('../models/index.js');
 
 module.exports = async (req, res, next) => {
