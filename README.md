@@ -1,5 +1,20 @@
 # Tourism-server
 
+----
+### Create a new application using your API Server and Authentication System.
+##### for API Data we use CRUD operatins and for ACL (access control list) 
+
+## Authrization
+
+-   users - READ
+
+-   writers - READ/CREATE
+
+-   editors - READ/CREATE/UPDATE
+
+-   admin - READ/CREATE/UPDATE/DELETE
+
+----
 ### Deployment
 
 
@@ -24,6 +39,30 @@
 
 ---
 
+
+#### Dependencies
+
+-   base-64
+
+-   bcrypt
+
+-   cors
+
+-   dotenv
+
+-   express
+
+-   jest
+
+-   jsonwebtoken
+
+-   pg
+
+-   supertest
+
+-   sequelize
+
+---
 
 
 ###### Running the app:
