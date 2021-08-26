@@ -1,8 +1,8 @@
 # Tourism-server
 
 ----
-### Create a new application using your API Server and Authentication System.
-##### for API Data we use CRUD operatins and for ACL (access control list) 
+### We create a new application using our API Server and Authentication System.
+##### for API Data we use CRUD operatins and  ACL (access control list) 
 
 ## Authrization
 
